@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.flowbite-modal .modal-close {
+  color: white;
+}

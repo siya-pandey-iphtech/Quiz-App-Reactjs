@@ -1,0 +1,93 @@
+[
+    {
+      "question": "What type of framework is Next.js?",
+      "answerOptions": [
+        { "answer": "Frontend" },
+        { "answer": "Backend" },
+        { "answer": "FullStack", "isCorrect": true },
+        { "answer": "None of the above" }
+      ]
+    },
+    {
+      "question": "When was Next.js released?",
+      "answerOptions": [
+        { "answer": "20 September 2019" },
+        { "answer": "14 January 2017" },
+        { "answer": "25 October 2016", "isCorrect": true },
+        { "answer": "28 March 2018" }
+      ]
+    },
+    {
+      "question": "Which CSS Framework are we using?",
+      "answerOptions": [
+        { "answer": "Bootstrap" },
+        { "answer": "TailwindCSS", "isCorrect": true },
+        { "answer": "Chakra UI" },
+        { "answer": "Bulma CSS" }
+      ]
+    },
+    {
+      "question": "Which class in Tailwind is used to set flex direction of column?",
+      "answerOptions": [
+        { "answer": "col" },
+        { "answer": "col-flex" },
+        { "answer": "flex-col", "isCorrect": true },
+        { "answer": "None of the above" }
+      ]
+    },
+    {
+      "question": "What is Next.js used for?",
+      "answerOptions": [
+        { "answer": "Building static websites" },
+        { "answer": "Server-side rendering", "isCorrect": true },
+        { "answer": "Database management" },
+        { "answer": "Machine learning" }
+      ]
+    },
+    {
+      "question": "Which Tailwind class is used to add padding to all sides?",
+      "answerOptions": [
+        { "answer": "p-4" },
+        { "answer": "p-8" },
+        { "answer": "p-12" },
+        { "answer": "p-0", "isCorrect": true }
+      ]
+    },
+    {
+      "question": "What does CSS stand for?",
+      "answerOptions": [
+        { "answer": "Cascading Style Sheets", "isCorrect": true },
+        { "answer": "Central Style System" },
+        { "answer": "Code Styling Sheets" },
+        { "answer": "Creative Style Solution" }
+      ]
+    },
+    {
+      "question": "Which utility-first CSS framework is known for its low-level utility classes?",
+      "answerOptions": [
+        { "answer": "Bootstrap" },
+        { "answer": "TailwindCSS", "isCorrect": true },
+        { "answer": "Foundation" },
+        { "answer": "Semantic UI" }
+      ]
+    },
+    {
+      "question": "What is the purpose of CSS frameworks?",
+      "answerOptions": [
+        { "answer": "To provide pre-designed website templates" },
+        { "answer": "To facilitate faster web development", "isCorrect": true },
+        { "answer": "To replace HTML and CSS" },
+        { "answer": "To automate database management" }
+      ]
+    },
+    {
+      "question": "Which CSS property is used to change the font size of text?",
+      "answerOptions": [
+        { "answer": "font-style" },
+        { "answer": "font-weight" },
+        { "answer": "font-size", "isCorrect": true },
+        { "answer": "font-family" }
+      ]
+    }
+  ]
+  
