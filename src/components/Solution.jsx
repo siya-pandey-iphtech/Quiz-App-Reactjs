@@ -4,8 +4,8 @@ const Solution = ({ selectedAnswers, correctAnswers }) => {
       <table className="w-full h-full  rounded-lg text-white p-5  ">
         <thead>
           <tr className=" ">
-            <th className="p-5 ">Your Answer</th>
-            <th className=" p-5">
+            <th className="p-5 text-xl font-bold">Your Answer</th>
+            <th className=" p-5 text-xl font-bold">
               Correct Answer
             </th>
           </tr>

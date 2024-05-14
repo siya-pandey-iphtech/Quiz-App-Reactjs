@@ -4,6 +4,8 @@ import { Modal } from "flowbite-react";
 import { Question } from "./components/Question";
 import questions from "./questions";
 import Solution from "./components/Solution";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 
 export const Quiz = () => {
   const [selectedAnswers, setSelectedAnswers] = useState(
@@ -38,8 +40,8 @@ export const Quiz = () => {
   return (
     <div
       style={{
-        backdropFilter: "blur(10px)",
-        backgroundColor: "rgba(255, 255, 255, 0.1)",
+        backdropFilter: "blur(100px)",
+        backgroundColor: "rgba(255, 255, 255, 0.001)",
       }}
       className="grid max-w-xl mx-auto p-5 shadow-white rounded-lg shadow-lg"
     >
@@ -58,7 +60,7 @@ export const Quiz = () => {
       <div className="flex justify-end">
         <button
         disabled={selectedAnswers.includes(null)}
-          className="m-5 font-pacifico py-2  px-5 font-bold text-2xl shadow-md shadow-white bg-purple-700 text-white  rounded-lg disabled:text-gray-400 disabled:bg-purple-100 disabled: cursor-not-allowed"
+          className="m-5 font-pacifico py-2  px-5 font-bold text-2xl shadow-md shadow-white bg-purple-700 text-white  rounded-lg disabled:text-gray-400 disabled:bg-purple-100 disabled:cursor-not-allowed"
           onClick={() => {
             checkAnswers();
             setOpenModal(true);
@@ -69,16 +71,24 @@ export const Quiz = () => {
       </div>
 
       <Modal
-        className="w-fit h-fit p-8 m-auto shadow-xl border-2 rounded-lg  backdrop-filter backdrop-blur-lg "
+      style={{
+        backdropFilter: "blur(100px)",
+        backgroundColor: "rgba(255, 255, 255, 0.00001)",
+      }}
+        className="w-fit h-fit p-8 m-auto shadow-xl border-2 rounded-lg   "
         dismissible
         
         show={openModal}
         onClose={() => setOpenModal(false)}
       >
-        <Modal.Header className=" font-pacifico  font-bold text-2xl text-center  text-white  ">
-          Your score is {score}/{questions.length}{" "}
-          
-        </Modal.Header>
+       
+  <div className=" mb-2 w-full  font-pacifico  font-bold text-2xl text-center  text-white  flex flex-col justify-center items-center">
+      <h1>Result </h1> 
+      Score :  {score}/{questions.length}{" "}
+    </div>
+    <button onClick={() => setOpenModal(false)} className="absolute top-0 right-0 p-2 text-white">
+    <FontAwesomeIcon icon={faX} />
+    </button>
         <Modal.Body>
           <div className=" space-y-6 ">
             <Solution
