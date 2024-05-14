@@ -33,7 +33,17 @@ export const Quiz = () => {
     });
     setScore(newScore);
   };
+  // const handleAnswerChange = (answer, index) => {
+  //   const newAnswers = [...selectedAnswers];
+  //   newAnswers[index] = answer;
+  //   setSelectedAnswers(newAnswers);
+  // };
   const handleAnswerChange = (answer, index) => {
+    if (selectedAnswers[index] !== null) {
+      toast.error("You've already answered this question");
+      return;
+    }
+
     const newAnswers = [...selectedAnswers];
     newAnswers[index] = answer;
     setSelectedAnswers(newAnswers);

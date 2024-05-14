@@ -39,51 +39,58 @@ export const Question = ({
           <div
             onClick={(e) => {
               e.stopPropagation();
-             
             }}
             className="m-5  p-5 grid  gap-3 w-full    "
           >
             {answerOptions.map((option, index) => (
-              <button
-                className={`border disabled:cursor-not-allowed rounded-lg p-2 hover:bg-teal-700 hover:text-white ${
-                  selectedAnswer === option.answer
-                    ? "bg-teal-700 text-white cursor-not-allowed"
-                    : ""
-                }`}
+
+              <div
                 key={index}
                 onClick={(e) => {
                   e.stopPropagation();
-                  
-                  if (selectedAnswer===option.answer) {
-                    toast.error("Can't change attempted answer");
-                    return;
-                  }
-
-                  setSelectedAnswer(option.answer);
-                  onAnswerChange(option.answer);
+                  // if (selectedAnswer !==null) {
+                  //   toast.error("Can't change attempted answer");
+                  // }
                 }}
-                disabled={selectedAnswer !== null}
-                title={
-                  selectedAnswer !== null
-                    ? "Already attempted answer can't be changed"
-                    : ""
-                }
               >
-                <label className=" flex items-start">
-                  <div className=" w-5  ">
-                    <input
-                      type="radio"
-                      name="answer"
-                      disabled={selectedAnswer !== option.answer}
-                      value={option.answer}
-                      checked={selectedAnswer === option.answer}
-                      readOnly
-                    />
-                  </div>
 
-                  <div className=" w-52 text-left pl-3 ">{option.answer}</div>
-                </label>
-              </button>
+                <button
+                  className={`border disabled:cursor-not-allowed rounded-lg p-2 hover:bg-teal-700 hover:text-white ${
+                    selectedAnswer === option.answer
+                      ? "bg-teal-700 text-white cursor-not-allowed"
+                      : ""
+                  }`}
+                  key={index}
+                  onClick={(e) => {
+                    e.stopPropagation();
+
+                    setSelectedAnswer(option.answer);
+                    onAnswerChange(option.answer);
+                  }}
+                  // disabled={selectedAnswer !== null}
+                  title={
+                    selectedAnswer !== null
+                      ? "Already attempted answer can't be changed"
+                      : ""
+                  }
+                >
+
+                  <label className=" flex items-start">
+                    <div className=" w-5  ">
+                      <input
+                        type="radio"
+                        name="answer"
+                        disabled={selectedAnswer !== option.answer}
+                        value={option.answer}
+                        checked={selectedAnswer === option.answer}
+                        readOnly
+                      />
+                    </div>
+
+                    <div className=" w-52 text-left pl-3 ">{option.answer}</div>
+                  </label>
+                </button>
+              </div>
             ))}
           </div>
         )}
