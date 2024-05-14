@@ -5,12 +5,17 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontWeight: {
+      'thin': '100',
+    },
+   
     extend: {
 
       fontFamily: {
-        'pacifico': ['Pacifico', 'cursive']
+        'sans': ['Montserrat'],
 
-      }
+      },
+     
     },
   },
   plugins: [],

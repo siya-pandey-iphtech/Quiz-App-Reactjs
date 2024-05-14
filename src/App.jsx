@@ -3,8 +3,8 @@ import { Quiz } from "./Quiz"
 function App() {
 
   return (
-    <div style={{ backgroundImage: `url(https://i.pinimg.com/736x/b2/fb/21/b2fb21f206c56acc2007ed7e587d9770.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-    className=" " >
+    <div style={{ backgroundImage: `url(https://cdn.dribbble.com/users/70529/screenshots/2377867/media/ce428c8300290c1e067b24619fb06f9f.png)`, backgroundSize: 'cover', backgroundPosition: '' }}
+    className=" overflow-hidden " >
 
      <Quiz/>
     </div>

@@ -38,14 +38,8 @@ export const Quiz = () => {
   };
 
   return (
-    <div
-      style={{
-        backdropFilter: "blur(100px)",
-        backgroundColor: "rgba(255, 255, 255, 0.001)",
-      }}
-      className="grid max-w-xl mx-auto p-5 shadow-white rounded-lg shadow-lg"
-    >
-      <h1 className="text-3xl font-bold mb-4 text-center text-white font-pacifico ">
+    <div className="grid max-w-xl mx-auto p-5  rounded-lg shadow-lg ">
+      <h1 className="text-3xl font-bold mb-4 text-center text-teal-800">
         Do You Know?{" "}
       </h1>
       {questions.map((question, index) => (
@@ -57,10 +51,10 @@ export const Quiz = () => {
           onAnswerChange={(answer) => handleAnswerChange(answer, index)}
         />
       ))}
-      <div className="flex justify-end">
+      <div className="flex justify-end ">
         <button
-        disabled={selectedAnswers.includes(null)}
-          className="m-5 font-pacifico py-2  px-5 font-bold text-2xl shadow-md shadow-white bg-purple-700 text-white  rounded-lg disabled:text-gray-400 disabled:bg-purple-100 disabled:cursor-not-allowed"
+          disabled={selectedAnswers.includes(null)}
+          className=" m-5 bg-teal-700 py-2 px-5 font-bold text-2xl shadow-md shadow-white text-white rounded-lg disabled:text-gray-400 disabled:bg-gray-200 disabled:cursor-not-allowed"
           onClick={() => {
             checkAnswers();
             setOpenModal(true);
@@ -71,26 +65,24 @@ export const Quiz = () => {
       </div>
 
       <Modal
-      style={{
-        backdropFilter: "blur(100px)",
-        backgroundColor: "rgba(255, 255, 255, 0.00001)",
-      }}
-        className="w-fit h-fit p-8 m-auto shadow-xl border-2 rounded-lg   "
+        style={{
+          backdropFilter: "blur(100px)",
+          backgroundColor: "rgba(255, 255, 255, 0.00001)",
+        }}
+        className="w-fit h-fit p-8 m-auto shadow-xl border-2 border-teal-700 rounded-lg bg-teal-700 "
         dismissible
-        
         show={openModal}
         onClose={() => setOpenModal(false)}
       >
-       
-  <div className=" mb-2 w-full  font-pacifico  font-bold text-2xl text-center  text-white  flex flex-col justify-center items-center">
-      <h1>Result </h1> 
-      Score :  {score}/{questions.length}{" "}
-    </div>
-    <button onClick={() => setOpenModal(false)} className="absolute top-0 right-0 p-2 text-white">
-    <FontAwesomeIcon icon={faX} />
-    </button>
+        <div className="my-2 w-full font-pacifico font-bold text-2xl text-center text-teal-700 flex flex-col justify-center items-center">
+          <h1>Result </h1>
+          Score : {score}/{questions.length}{" "}
+        </div>
+        <button onClick={() => setOpenModal(false)} className="absolute top-0 right-0 p-2 text-teal-700">
+          <FontAwesomeIcon icon={faX} />
+        </button>
         <Modal.Body>
-          <div className=" space-y-6 ">
+          <div className="space-y-6 ">
             <Solution
               selectedAnswers={selectedAnswers}
               correctAnswers={correctAnswers}
