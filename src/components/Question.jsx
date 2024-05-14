@@ -67,7 +67,7 @@ export const Question = ({
                     setSelectedAnswer(option.answer);
                     onAnswerChange(option.answer);
                   }}
-                  // disabled={selectedAnswer !== null}
+                   disabled={selectedAnswer !== null}
                   title={
                     selectedAnswer !== null
                       ? "Already attempted answer can't be changed"
