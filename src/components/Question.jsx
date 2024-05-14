@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import toast from "react-hot-toast";
 
 export const Question = ({
   question,
@@ -35,22 +36,32 @@ export const Question = ({
           </div>
         </div>
         {isOpen && (
-          <div className="m-5  p-5 grid  gap-3 w-full    ">
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+             
+            }}
+            className="m-5  p-5 grid  gap-3 w-full    "
+          >
             {answerOptions.map((option, index) => (
               <button
-                className={`border rounded-lg p-2 hover:bg-teal-700 hover:text-white ${
+                className={`border disabled:cursor-not-allowed rounded-lg p-2 hover:bg-teal-700 hover:text-white ${
                   selectedAnswer === option.answer
-                    ? "bg-teal-700 text-white "
+                    ? "bg-teal-700 text-white cursor-not-allowed"
                     : ""
                 }`}
                 key={index}
                 onClick={(e) => {
                   e.stopPropagation();
-                 if(selectedAnswer===null){
-                 
+                  
+                  if (selectedAnswer===option.answer) {
+                    toast.error("Can't change attempted answer");
+                    return;
+                  }
+
                   setSelectedAnswer(option.answer);
                   onAnswerChange(option.answer);
-                }}}
+                }}
                 disabled={selectedAnswer !== null}
                 title={
                   selectedAnswer !== null
@@ -63,6 +74,7 @@ export const Question = ({
                     <input
                       type="radio"
                       name="answer"
+                      disabled={selectedAnswer !== option.answer}
                       value={option.answer}
                       checked={selectedAnswer === option.answer}
                       readOnly

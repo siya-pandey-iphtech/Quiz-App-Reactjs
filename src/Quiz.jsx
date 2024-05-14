@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Modal } from "flowbite-react";
-
+import { toast } from 'react-hot-toast';
 import { Question } from "./components/Question";
 import questions from "./questions";
 import Solution from "./components/Solution";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+import { Progress } from "./components/Progress";
 
 export const Quiz = () => {
   const [selectedAnswers, setSelectedAnswers] = useState(
@@ -13,6 +14,7 @@ export const Quiz = () => {
   );
   const [openModal, setOpenModal] = useState(false);
   const [score, setScore] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
 
   const correctAnswers = questions.map(
     (question) =>
@@ -38,7 +40,8 @@ export const Quiz = () => {
   };
 
   return (
-    <div className="grid max-w-xl mx-auto p-5  rounded-lg shadow-lg ">
+    <div className="flex justify-center items-start p-5 m-5 ">
+    <div className="grid max-w-xl mx-auto p-5 h-screen overflow-scroll rounded-lg shadow-lg ">
       <h1 className="text-3xl font-bold mb-4 text-center text-teal-800">
         Do You Know?{" "}
       </h1>
@@ -92,5 +95,7 @@ export const Quiz = () => {
         <Modal.Footer></Modal.Footer>
       </Modal>
     </div>
+    <Progress selectedAnswers={selectedAnswers}  />
+</div>
   );
 };
