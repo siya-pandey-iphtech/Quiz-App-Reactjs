@@ -77,7 +77,8 @@ export const Question = ({
                     <div className=" w-5 ">
                       <input
                         type="radio"
-                        name="answer"
+                        name={`answer-${number}`}
+
                         value={option.answer}
                         checked={selectedAnswer === option.answer}
                         readOnly
