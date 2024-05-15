@@ -11,7 +11,7 @@ export const Question = ({
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
   const handleAnswerSelection = (e, option) => {
-    console.log("handleAnswerSelection is called ");
+    console.log("handleAnswerSelection is called by: ", e.target);
     e.stopPropagation();
     if (selectedAnswer && selectedAnswer !== option.answer) {
       console.log("not allowed ");
@@ -75,7 +75,7 @@ export const Question = ({
                   }
                 >
                   <label className="  flex items-start "
-                 
+                
                   >
                     <div className=" w-5 ">
                       <input
@@ -88,7 +88,9 @@ export const Question = ({
                       />
                     </div>
 
-                    <div className=" w-52 text-left pl-3 ">{option.answer}</div>
+                    <div 
+                    onClick={(e)=>e.stopPropagation()}
+                    className=" w-52 text-left pl-3 ">{option.answer}</div>
                   </label>
                 </button>
               </div>
