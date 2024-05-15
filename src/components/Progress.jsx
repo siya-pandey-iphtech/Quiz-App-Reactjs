@@ -1,6 +1,6 @@
 export const Progress = ({ selectedAnswers }) => {
   return (
-    <div className=" w-full sm:w-fit border-2  p-1 sm:p-5  bg-white shadow-lg rounded-lg  m-1 sm:m-5  mt-0  min-w-60">
+    <div className=" w-full sm:w-fit border-2  p-1 sm:p-5  bg-white shadow-lg rounded-lg  m-1 sm:m-5  mt-0  min-w-60 fixed top-0 sm:sticky">
       <h1 className="text-xl text-center pb-5   ">Progress</h1>
 
       <div className="grid grid-cols-5 gap-4">

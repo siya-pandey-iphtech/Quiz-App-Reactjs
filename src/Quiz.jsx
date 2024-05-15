@@ -39,8 +39,8 @@ export const Quiz = () => {
   };
 
   return (
-    <div className="flex flex-col-reverse sm:flex-row  justify-center  items-center sm:items-start   ">
-    <div className="grid max-w-xl  mx-auto p-5 h-screen overflow-scroll rounded-lg shadow-lg ">
+    <div className="flex flex-col-reverse sm:flex-row  justify-center  items-center sm:items-start pt-40 sm:pt-0  ">
+    <div className=" quiz-container grid max-w-xl  mx-auto p-5  overflow-scroll rounded-lg shadow-lg h-screen " >
       <h1 className="text-3xl font-bold mb-4 text-center text-teal-800">
         Do You Know?{" "}
       </h1>
