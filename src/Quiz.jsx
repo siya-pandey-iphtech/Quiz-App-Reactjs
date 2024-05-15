@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Modal } from "flowbite-react";
-import { toast } from 'react-hot-toast';
 import { Question } from "./components/Question";
 import questions from "./questions";
 import Solution from "./components/Solution";
@@ -14,7 +13,7 @@ export const Quiz = () => {
   );
   const [openModal, setOpenModal] = useState(false);
   const [score, setScore] = useState(0);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+ 
 
   const correctAnswers = questions.map(
     (question) =>
@@ -38,16 +37,6 @@ export const Quiz = () => {
     newAnswers[index] = answer;
     setSelectedAnswers(newAnswers);
   };
-  // const handleAnswerChange = (answer, index) => {
-  //   if (selectedAnswers[index] !== null) {
-  //     toast.error("You've already answered this question");
-  //     return;
-  //   }
-
-  //   const newAnswers = [...selectedAnswers];
-  //   newAnswers[index] = answer;
-  //   setSelectedAnswers(newAnswers);
-  // };
 
   return (
     <div className="flex justify-center items-start p-1 md:p-5 m-1 md:m-5 ">
