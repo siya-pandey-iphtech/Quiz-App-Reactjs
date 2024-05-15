@@ -54,7 +54,8 @@ export const Question = ({
         {isOpen && (
           <div className="m-5  p-5 grid  gap-3 w-full    ">
             {answerOptions.map((option, index) => (
-              <div key={index}>
+              <div key={index}
+             >
                 <button
                   className={`border disabled:cursor-not-allowed rounded-lg p-2 hover:bg-teal-900 hover:text-white ${
                     selectedAnswer === option.answer
@@ -62,26 +63,28 @@ export const Question = ({
                       : ""
                   }`}
                   onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
+                    //e.preventDefault();
+                     e.stopPropagation();
                     handleAnswerSelection(e, option);
                   }}
-                  // disabled={selectedAnswer !== null}
+                 
                   title={
                     selectedAnswer !== null
                       ? "Already attempted answer can't be changed"
                       : ""
                   }
                 >
-                  <label className="  flex items-start ">
+                  <label className="  flex items-start "
+                 
+                  >
                     <div className=" w-5 ">
                       <input
                         type="radio"
                         name={`answer-${number}`}
-
                         value={option.answer}
                         checked={selectedAnswer === option.answer}
                         readOnly
+                       
                       />
                     </div>
 

@@ -39,7 +39,7 @@ export const Quiz = () => {
   };
 
   return (
-    <div className="flex justify-center items-start p-1 md:p-5 m-1 md:m-5 ">
+    <div className="flex flex-col-reverse sm:flex-row  justify-center  items-center sm:items-start   ">
     <div className="grid max-w-xl  mx-auto p-5 h-screen overflow-scroll rounded-lg shadow-lg ">
       <h1 className="text-3xl font-bold mb-4 text-center text-teal-800">
         Do You Know?{" "}
@@ -95,6 +95,7 @@ export const Quiz = () => {
       </Modal>
     </div>
     <Progress selectedAnswers={selectedAnswers}  />
+
 </div>
   );
 };
